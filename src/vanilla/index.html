@@ -8,12 +8,14 @@
   </style>
 </head>
 <body>
+  <h1>TEST !!!!</h1>
   <img id="pictureUrl" width="25%">
   <p id="displayName"></p>
   <p id="userId"></p>
   <p id="getDecodedIDToken"></p>
   <p id="statusMessage"></p>
   <button id="button_test" onclick="sendMessageDemo()">Hello world</button>
+  <button id="" onclick="logout()">LOGOUT</button>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function runApp() {
@@ -27,6 +29,11 @@
         
       }).catch(err => console.error(err));
     }
+
+    function logout(){
+      liff.logout();
+    }
+    
 
     function sendMessageDemo(){
       liff.sendMessages('helloworld');
