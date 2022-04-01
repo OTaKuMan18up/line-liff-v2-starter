@@ -13,6 +13,8 @@
   <p id="displayName"></p>
   <p id="statusMessage"></p>
   <p id="getDecodedIDToken"></p>
+
+  <button id="sendMessage">Hello world</button>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function runApp() {
@@ -24,6 +26,10 @@
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
       }).catch(err => console.error(err));
     }
+    document.sendMessage("pictureUrl").click(function(){
+      liff.sendMessages('helloworld');
+    })
+    
     liff.init({ liffId: "1657021083-PLm6oExp" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
