@@ -13,8 +13,7 @@
   <p id="userId"></p>
   <p id="getDecodedIDToken"></p>
   <p id="statusMessage"></p>
-
-  <button onclick="sendMessageDemo()">Hello world</button>
+  <button id="button_test" onclick="sendMessageDemo()">Hello world</button>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function runApp() {
@@ -24,6 +23,8 @@
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+        document.getElementById("button_test").innerHTML = 'Test';
+        
       }).catch(err => console.error(err));
     }
 
