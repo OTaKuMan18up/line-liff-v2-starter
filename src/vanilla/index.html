@@ -14,15 +14,15 @@
   <p id="userId"></p>
   <p id="getDecodedIDToken"></p>
   <p id="statusMessage"></p>
-  <button id="button_test" onclick="sendMessageDemo()">Hello world</button>
-  <button id="" onclick="logout()">LOGOUT</button>
+  <p id="button_test" onclick="sendMessageDemo()">Hello world</p>
+  <p id="" onclick="logout()">LOGOUT</p>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function runApp() {
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
+        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
         document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
         document.getElementById("button_test").innerHTML = 'Test';
